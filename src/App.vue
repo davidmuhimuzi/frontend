@@ -14,7 +14,7 @@
       src="./assets/logowilshire.png"
       :aspect-ratio="10/2"
       align
-
+ 
       />
 
 
