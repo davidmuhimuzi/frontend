@@ -12,7 +12,7 @@
       <v-img 
       alt="logo"
       src="./assets/logowilshire.png"
-      :aspect-ratio="10/2"
+      :aspect-ratio="15/2"
       align
 
       />
