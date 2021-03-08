@@ -190,6 +190,8 @@
 
 <script>
 import { db } from '@/main';
+import EventService from "../services/EventService";
+
 export default {
     
     data: () => ({
@@ -216,11 +218,20 @@ export default {
 
     }),
 
-    mounted() {
-        this.getEvents()
-    },
+     created() {
+       EventService.getEvents()
+            .then(response => {
+                this.events = response.data;
+                console.log(this.events);
+            })
+            .catch(error => {
+                this.message = error.response.data.message;
+          });
+          },
+
+
     methods: {
-        async getEvents () {
+       /* async getEvents () {
             let snapshot = await db.collection('calEvent').get();
             let events = [];
             snapshot.forEach(doc => {
@@ -230,6 +241,7 @@ export default {
             });
             this.events =events;
         },
+        */
 
         async addEvent() {
             if(this.name && this.start && this.end) {
