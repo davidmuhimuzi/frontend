@@ -28,7 +28,7 @@
 
       <v-navigation-drawer
         v-model="drawer"
-        absolute
+        fixed
         temporary
         right
       >
@@ -59,7 +59,6 @@
 
   </v-app>
 </template>
-
 <script>
 export default {
   name: "app",
@@ -81,4 +80,5 @@ export default {
     
     }
   }
+
 </script>
